@@ -1,0 +1,287 @@
+section {
+  width: 100%;
+}
+
+
+
+/*** 메인배너 ***/
+#main_banner {
+  position: relative;
+  height: auto;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+}
+
+
+
+/*** 제품 둘러보기 ***/
+#best {
+  margin: 120px auto;
+  width: 1280px;
+  height: 606px;
+}
+
+#best h2 {
+  font-size: 32px;
+  font-weight: 500;
+  padding: 40px 0;
+}
+
+#best ul {
+  overflow: hidden;
+}
+
+#best li {
+  position: relative;
+  float: left;
+  margin-right: 20px;
+}
+
+#best li:first-child {
+  margin-left: 20px;
+}
+
+#best li img {
+  width: 295px;
+}
+
+#best h3 {
+  float: right;
+  font-size: 24px;
+}
+
+#best h3 a {
+  font-weight: 400;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+.hoverbox {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hoverbox-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.hoverbox img {
+  position: absolute;
+  top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hoverbox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hoverbox h4,
+.hoverbox p {
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  line-height: 24px;
+  z-index: 2;
+}
+
+.hoverbox h4 {
+  padding: 10px;
+}
+
+#best .hoverbox a {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 4;
+}
+
+#best li:hover .hoverbox {
+  top: 0;
+}
+
+
+
+
+/*** 배너 슬라이드 ***/
+#banner2 {
+  width: 100%;
+  height: 580px;
+  overflow: hidden;
+}
+
+#banner2 ul {
+  width: 400%;
+  position: relative;
+  left: 0;
+  animation: slide 20s infinite;
+}
+
+@keyframes slide {
+  0% {left: 0%;}
+  22% {left: 0%;}
+  
+  26% {left: -100%;}
+  48% {left: -100%;}
+
+  52% {left: -200%;}
+  74% {left: -200%;}
+  
+  78% {left: -300%;}
+  100% {left: -300%;}
+}
+
+#banner2 li {
+  width: 25%;
+  height: 580px;
+  position: relative;
+  float: left;
+  overflow: hidden;
+}
+
+#banner2 li:hover .hoverbox {
+  top: 0;
+}
+
+#banner2>ul>li>img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#banner2 .hoverbox a:last-child {
+  position: static;
+  top: auto;
+  left: auto;
+  font-size: 32px;
+  font-weight: 500;
+  z-index: 4;
+}
+
+#banner2 .hoverbox a img {
+  width: 52px;
+  height: auto;
+  position: static;
+  transform: none;
+  vertical-align: middle;
+}
+
+
+
+/*** 연혁 슬라이드 ***/
+#slide {
+  margin: 140px auto 0 auto;
+  width: 1280px;
+  height: 700px;
+  position: relative;
+  perspective: 2000px;
+  overflow: hidden;
+  text-align: center;
+}
+
+#slide h2 {
+  line-height: 50px;
+  font-size: 40px;
+  font-weight: 200;
+  text-align: center;
+}
+
+#slide h3 {
+  line-height: 50px;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 550px;
+  margin-bottom: 16px;
+}
+
+#slide span {
+  line-height: 30px;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+#slide ul {
+  width: 100%;
+  height: 500px;
+  left: 50%;
+  top: calc(50% - 50px);
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%) translateZ(-1400px);
+  animation: rotate 40s linear infinite;
+}
+
+#slide ul li {
+  position: absolute;
+  width: 352px;
+  height: 500px;
+  left: 50%;
+  transform-origin: center center;
+  margin-left: -176px;
+  backface-visibility: hidden;
+}
+
+#slide ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+#slide ul li a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) translateZ(-1400px) rotateY(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) translateZ(-1400px) rotateY(-360deg);
+  }
+}
+
+#slide ul:hover {
+  animation-play-state: paused;
+}

@@ -1,0 +1,168 @@
+/*** 제품군 배너 ***/
+#products-banner {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+}
+
+#products-banner>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+#products-banner::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%);
+}
+
+#products-banner .banner-text {
+  width: 1280px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+#products-banner h1 {
+  font-size: 40px;
+  font-weight: 800;
+  padding: 10px 20px;
+}
+
+#products-banner p {
+  font-size: 24px;
+  font-weight: 400;
+  padding: 10px 20px;
+}
+
+
+
+/*** 시리즈 영역 ***/
+#series {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+#series > h2 {
+  font-size: 32px;
+  font-weight:500;
+  padding: 40px 20px;
+}
+
+#series-list {
+  display: flex;
+  justify-content: center;  /* 개수 상관없이 균등 배치 */
+  padding: 10px 0;
+  gap: 20px;
+}
+
+#series-list li {
+  width: 236px;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+#series-list img {
+  width: 90%;
+  height: 215px;
+  object-fit: contain;
+}
+
+#series-list li:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.2);
+}
+
+#series-list h4 {
+  font-size: 20px;
+  font-weight:500;
+  padding: 10px;
+}
+
+#series-list p {
+  font-size: 16px;
+  color: #a9a9a9;
+  line-height: 1.4;
+  padding: 0 10px;
+}
+
+
+/*** 제품 목록 ***/
+#products {
+  width: 1280px;
+  margin: 40px auto;
+}
+
+.products-header {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.products-header h2 {
+  float: left;
+  font-size: 32px;
+  font-weight:500;
+  margin: 40px 20px;
+}
+
+.products-header .filters {
+  float: right;
+}
+
+.products-header .filters span {
+  margin: 20px;
+  font-size: 16px;
+  font-weight:300;
+  cursor: pointer;
+}
+
+.products-header .filters span img {
+  rotate: 90deg;
+  width: 20px;
+}
+
+#products-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+#products-list li {
+  transition: transform 0.3s, filter 0.3s;
+}
+
+#products-list li:hover {
+  /* transform: translateY(-5px); */
+  transform: scale(0.95);
+  filter: brightness(1.15);
+}
+
+
+#products-list img {
+  width: 90%;
+  height: 295px;
+  object-fit: contain;
+  position: relative;
+}
+
+#products-list p {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: left;
+}
+
+#products-list a {
+  display: block;
+}
