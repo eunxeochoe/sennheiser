@@ -1,0 +1,18 @@
+#contentwrap {
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#contentwrap img {
+ width: 100%;
+  min-height: 100vh;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  margin-top: -360px;
+}
