@@ -3,7 +3,7 @@
 // ========================================
 
 const products = {
-  
+
   // 마이크 카테고리
   "microphone": {
     title: "MICROPHONES",
@@ -15,7 +15,8 @@ const products = {
       {
         name: "MKH",
         image: "source/mkh.png",
-        content: "오디오의 사실성을 담기 위한 마이크"
+        content: "오디오의 사실성을 담기 위한 마이크",
+        link: "series.html"
       },
       {
         name: "MK",
@@ -41,7 +42,7 @@ const products = {
 
     // 제품 목록
     items: [
-      { name: "MKH 8018 Model", image: "source/mkh-8018.png" },
+      { name: "MKH 8018 Model", image: "source/mkh-8018.png", link: "product-info.html" },
       { name: "Profile Wireless Transmitter", image: "source/profile-transmitter.png" },
       { name: "Profile Wireless Receiver", image: "source/profile-receiver.png" },
       { name: "MD 421 KOMPAKT", image: "source/md-421.png" },
@@ -86,7 +87,7 @@ console.log("데이터:", product);  // 확인용
 // ========================================
 
 function renderPage() {
-  
+
   // 카테고리가 없으면 에러 표시
   if (!product) {
     document.getElementById('products-title').textContent = '카테고리를 찾을 수 없습니다';
@@ -100,39 +101,39 @@ function renderPage() {
 
   // 4-2. 시리즈 목록 채우기
   const seriesList = document.getElementById('series-list');
-  
+
   let seriesHTML = '';  // 빈 문자열 준비
-  
+
   // 시리즈 배열을 돌면서 HTML 만들기
   for (let i = 0; i < product.series.length; i++) {
     const series = product.series[i];
-    
-seriesHTML += '<li>';
-    seriesHTML += '<a href="">'
+
+    seriesHTML += '<li>';
+    seriesHTML += '<a href="' + series.link + '">';
     seriesHTML += '<img src="' + series.image + '" alt="' + series.name + '">';
     seriesHTML += '<h4>' + series.name + '</h4>';
     seriesHTML += '<p>' + series.content + '</p>';
     seriesHTML += '</a>';
     seriesHTML += '</li>';
   }
-  
+
   seriesList.innerHTML = seriesHTML;  // HTML에 넣기
 
   // 4-3. 제품 목록 채우기
-const productsList = document.getElementById('products-list');
+  const productsList = document.getElementById('products-list');
   let itemsHTML = '';
-  
+
   for (let i = 0; i < product.items.length; i++) {
     const item = product.items[i];
-    
+
     itemsHTML += '<li>';
-    itemsHTML += '<a href="">';
+    itemsHTML += '<a href="' + item.link + '">';
     itemsHTML += '<img src="' + item.image + '" alt="' + item.name + '">';
     itemsHTML += '<p>' + item.name + '</p>';
     itemsHTML += '</a>';
     itemsHTML += '</li>';
   }
-  
+
   productsList.innerHTML = itemsHTML;
 }
 
